@@ -1,0 +1,256 @@
+﻿@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+
+<html>
+<head>
+    <title>
+        <p1>HỆ THỐNG CỬA HÀNG DEGREY</p1>
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap
+        }
+
+        .main-content {
+            width: 70%;
+        }
+
+        .sidebar {
+            width: 25%;
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .video-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .video-container iframe {
+                width: 100%;
+                height: 500px;
+            }
+
+        .sidebar h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+            .sidebar ul li {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+
+                .sidebar ul li i {
+                    margin-left: 10px;
+                }
+
+        .sidebar img {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .location i {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .location p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .image{
+            height:292px;
+            width:221px
+        }
+       
+
+            .images img {
+                width: 300px;
+                height: auto;
+                margin: 0 10px;
+            }
+
+        .hotline {
+            font-weight: bold;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+            .contact-item img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+
+            .contact-item a {
+                text-decoration: none;
+                color: #000;
+            }
+
+        .address {
+            text-align: center;
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        .images {
+            display: flex;
+            justify-content: left;
+            margin-top: 20px;
+            margin-bottom :20px;
+
+        }
+            .images img {
+                width: 300px;
+                height: auto;
+                margin: 0 10px;
+            }
+
+        .map {
+            text-align: center;
+            margin-bottom: 100px;
+            height:352px;
+            width:650px;
+
+
+        }
+
+            .map iframe {
+                width: 100%;
+                height: 400px;
+            }
+
+        .hotline {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-top:20px;
+        }
+
+            .contact-item img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+
+            .contact-logo a {
+                text-decoration: none;
+                color: #000;
+                font-size:20px;
+            }
+    </style>
+</head>
+<body>
+    <h1>
+        HỆ THỐNG CỬA HÀNG DEGREY
+    </h1>
+    <div class="container">
+        <div class="main-content">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/kQ_pyG0jatk?si=ywcPcRmnkyIQJ2ob" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="sidebar">
+            <h2>
+            Danh mục page
+            </h2>
+            <ul>
+                <li><a href="~/Home/SanPham" class="fm-link-menu">Sản Phẩm</a></li>
+                <li><a href="~/Home/Store" class="fm-link-menu">Store</a></li>
+                <li><a href="~/Home/GioiThieu" class="fm-link-menu">Giới Thiệu</a></li>
+            </ul>
+            <img src="~/Content/Image/anh-casau.png" height="300" width="300" />
+        </div>
+    </div>
+
+            <div class="location">
+                <p>
+                    <i class="fas fa-map-marker-alt">
+                    </i>
+                    43 Huỳnh Văn Bánh P.17 Quận Phú Nhuận - SÀI GÒN
+                </p>
+               
+            </div>
+            <div class="images">
+                <img src="~/Content/Image/anh-store1.png" />
+                <img src="~/Content/Image/anh-store2.png" />
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7838.413322777111!2d106.681808!3d10.795478!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528d411c35277%3A0xcf96cde06627a938!2zRGVncmV5LnZuIC0gU8OgaSBHw7JuIC0gNDMgSHXhu7NuaCBWxINuIELDoW5oIFAuMTcgUS5QaMO6IE5odeG6rW4!5e0!3m2!1svi!2sus!4v1729010416373!5m2!1svi!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="hotline">
+                Hotline: 0336311117
+            </div>
+            <div class="contact-logo">
+                <img alt="Facebook icon" height="30" src="~/Content/Image/logo-fb.png" width="30" />
+                <a href="https://www.facebook.com/degrey.saigon">
+                    https://www.facebook.com/degrey.saigon
+                </a>
+            </div>
+            <div class="contact-logo">
+                <img alt="Instagram icon" height="30" src="~/Content/Image/logo-ig.png" width="30" />
+                <a href="https://www.instagram.com/degrey.saigon/">
+                    https://www.instagram.com/degrey.saigon/
+                </a>
+            </div>
+            <div class="contact-logo">
+                <img alt="TikTok icon" height="30" src="~/Content/Image/logo-tiktok.png" width="30" />
+                <a href="https://www.tiktok.com/degreyvn">
+                    https://www.tiktok.com/degreyvn
+                </a>
+            </div>
+            <div class="contact-logo">
+                <img alt="YouTube icon" height="30" src="~/Content/Image/logp-ytb.png" width="30" />
+                <a href="https://www.youtube.com/degreyvn">
+                    https://www.youtube.com/degreyvn
+                </a>
+            </div>
+            <div class="contact-logo">
+                <img alt="Shopee icon" height="30" src="~/Content/Image/logo-shopee.png" width="30" />
+                <a href="https://shopee.vn/degrey.vn">
+                    https://shopee.vn/degrey.vn
+                </a>
+            </div>
+            <div class="contact-logo">
+                <img alt="Lazada icon" height="30" src="~/Content/Image/logo-lazada.png" width="30" />
+                <a href="https://www.lazada.vn/shop/degrey-vietnam/">
+                    https://www.lazada.vn/shop/degrey-vietnam/
+                </a>
+            </div>
+        </div>
+</body>
+</html>

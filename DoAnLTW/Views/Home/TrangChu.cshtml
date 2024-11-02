@@ -1,0 +1,86 @@
+﻿@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<style type="text/css">
+    #Container{
+        width:1100px;
+        height:1650px;
+    }
+
+    #ThumbNailMainContainer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ThumbImage {
+        height: 91px;
+        width: 91px;
+        border: 6px solid #ddd;
+    }
+</style>
+
+<html >
+<head>
+    <script src="~/Scripts/jquery-3.7.0.min.js">
+
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('.ThumbContainer img').on({
+            mousemove: function () {
+                $(this).css({
+                    'cursor': 'pointer',
+                    'border': '6px solid grey'
+                });
+            },
+
+            mouseout: function () {
+                $(this).css({
+                    'border': '6px solid #ddd'
+
+                });
+            },
+
+            click: function () {
+                var CImage = $(this).attr('src');
+
+                $('#MainImage').fadeOut(500, function () {
+                    $(this).attr('src', CImage);
+                }).fadeIn(500);
+
+                //attr('src', x);
+            }
+
+        });
+    });
+    </script>
+
+</head>
+<body>
+    <div id="Container">
+        <div class="box-img">
+            <img id="MainImage" class="fm-size-img-prod" src="https://file.hstatic.net/1000281824/file/32173e39fa53510d0842_95b89886aeed4ef59f7cd2a2ca80b8ec.jpg" width="1100px" height="1500px" />
+        </div>
+
+        <div id="ThumbNailMainContainer">
+            <div class="ThumbContainer">
+                <img class="ThumbImage" src="https://file.hstatic.net/1000281824/file/1ca4178ad3e078be21f1_35f111cef15048818bf3f1a089d32f54.jpg" height="91px" width="91px" />
+
+            </div>
+            <div class="ThumbContainer">
+                <img class="ThumbImage" src="https://file.hstatic.net/1000281824/file/ee400e442f6df233ab7c1_eba88f00fdbe433280b9b76ab933c391.jpg" height="91px" width="91px" />
+            </div>
+            <div class="ThumbContainer">
+                <img class="ThumbImage" src="https://file.hstatic.net/1000281824/file/32173e39fa53510d0842_95b89886aeed4ef59f7cd2a2ca80b8ec.jpg" height="91px" width="91px" />
+
+            </div>
+           
+
+            
+        </div>
+    </div>
+</body>
+</html>

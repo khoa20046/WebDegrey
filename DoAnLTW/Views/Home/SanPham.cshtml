@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .product {
+        width: 23%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        text-align: center;
+
+    }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            
+        }
+
+    .product-title {
+        font-size: 16px;
+        margin: 10px 0;
+        text-decoration: none;
+        color: black;
+    }
+
+    .product-price {
+        font-size: 18px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .product-old-price {
+        font-size: 14px;
+        color: #888;
+        text-decoration: line-through;
+        margin-left: 10px;
+    }
+</style>
+
+<html>
+<head>
+    
+
+</head>
+<body>
+    <h1 class="title">
+        Tất cả sản phẩm
+    </h1>
+    <div class="container">
+        
+            <div class="product">
+                <a href="~/Home/ChiTietSanPham1" class="product-title">
+                    <img src="https://product.hstatic.net/1000281824/product/dscf0026_1_1_d9da9573c5804b598558a16e5a3fa7b9.jpeg" width="222px" height="222px"/>
+                    <div class="product-title">
+                        Áo thun Degrey thiết kế phong cách oversize màu trắng in hình big   
+                    </div>
+                </a>
+                <div>
+                    <span class="product-price">220,000₫</span>
+                    <span class="product-old-price">350,000₫</span>
+                </div>
+            </div>
+
+        
+        <div class="product">
+            <a href="~/Home/ChiTietSanPham2" class="product-title">
+            <img src="https://product.hstatic.net/1000281824/product/c4f47ea1b1a3475cb6132c505069e08b_66ef6884b6e647a48645b8e24269a6b2_large.jpeg" width="222px" height="222px" />
+            <div class="product-title">Áo thun Degrey thiết kế phong cách oversize màu đe...</div>
+            </a>
+            <div>
+                <span class="product-price">220,000₫</span>
+                <span class="product-old-price">350,000₫</span>
+            </div>
+        </div>
+
+        <div class="product">
+            <a href="~/Home/ChiTietSanPham3" class="product-title">
+                <img src="  https://product.hstatic.net/1000281824/product/img_2797_bb4a3b55a0f74531ac0bcda667dcae99.jpeg" width="222px" height="222px" />
+                <div class="product-title">Áo thun Degrey boxy logo kim loại thiết kế thời trang nam nữ màu trắng - BOXT</div>
+            </a>
+                <div>
+                    <span class="product-price">180,000₫</span>
+                    <span class="product-old-price">300,000₫</span>
+                </div>
+        </div>
+
+        <div class="product">
+            <a href="~/Home/ChiTietSanPham4" class="product-title">
+                <img src="https://product.hstatic.net/1000281824/product/img_3495_9f4100b302aa4a03ba1b92b74030515f_large.jpeg" width="222px" height="222px" />
+                <div class="product-title">Áo thun Degrey boxy logo kim loại thiết kế thời trang nam nữ màu đen - BOXD</div>
+            </a>
+                <div>
+                    <span class="product-price">180,000₫</span>
+                    <span class="product-old-price">300,000₫</span>
+                </div>
+        </div>
+
+    </div>
+</body>
+</html>

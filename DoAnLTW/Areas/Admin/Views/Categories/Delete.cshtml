@@ -1,0 +1,34 @@
+﻿@model DoAnLTW.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="bg-success">Delete</h2>
+
+<h3>Bạn muốn xóa danh mục này?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.CategoryName)*@
+            Tên Danh Mục
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-primary btn-sm  " /> |
+           @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary btn-sm" })
+        </div>
+    }
+</div>

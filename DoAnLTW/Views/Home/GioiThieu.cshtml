@@ -1,0 +1,273 @@
+﻿@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap
+        }
+            .main-content {
+            width: 70%;
+        }
+        
+
+        .highlight {
+            font-style: italic;
+        }
+        .sidebar {
+            width: 25%;
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: left;
+        }
+        .sidebar h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+            .sidebar ul li {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+
+                .sidebar ul li i {
+                    margin-left: 10px;
+                }
+
+        .sidebar img {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+            .image-container img {
+                width: 100%;
+                height: auto;
+            }
+        .image {
+            flex: 1;
+            text-align: center;
+            margin-bottom:20px;
+
+        }
+
+            .image img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+        .content p {
+            line-height: 1.8;
+            color: #333;
+            text-align: left;
+            font-size: 12px;
+            max-width:600px;
+        }
+        .clearfix {
+            overflow: auto;
+        }
+        .content a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+            text-align: left;
+            margin-bottom:10px;
+            margin-top:10px;
+            font-size: 16px;
+        }
+        .h3 {
+            margin-top:20px;
+            margin-bottom:20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        h4 {
+            font-size: 10px;
+        }
+        .store  {
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width:600px;
+        }
+
+            .store p {
+                margin: 0;
+            }
+            .store a {
+                display: block;
+                color: #0066cc;
+                text-decoration: none;
+                margin-bottom: 10px;
+                word-wrap: break-word;
+                max-width:600px;
+            }
+        .store a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1> 
+        Degrey is us - DGSUS
+    </h1>
+    <div class="container">
+        <div class="main-content">
+            <img height="541" src="~/Content/Image/anh-1.png" width="600" />
+        </div>
+
+        <div class="sidebar">
+            <h2>
+                Danh mục page
+            </h2>
+            <ul>
+                <li><a href="~/Home/SanPham" class="fm-link-menu">Sản Phẩm</a></li>
+                <li><a href="~/Home/Store" class="fm-link-menu">Store</a></li>
+                <li><a href="~/Home/GioiThieu" class="fm-link-menu">Giới Thiệu</a></li>
+            </ul>
+            <img src="~/Content/Image/anh-casau.png" height="300" width="300" />
+        </div>
+        <div class="content">
+            <p>
+                Thành lập từ năm 2016 và được nhiều bạn trẻ biết đến qua những mẫu áo truyền thống, Degrey hiện đang từng bước khẳng định vị trí của mình trong bản đồ streetwear Việt Nam.
+            </p>
+            <img alt="Person wearing Degrey clothing" height="400" src="~/Content/Image/anh-2.png" width="600" />
+
+            <p>
+                Cái tên Degrey được tạo ra rất ngẫu hứng, xuất phát từ <span class="highlight">“Chuỗi ngày u buồn về sự nghiệp, tương lai trong quá khứ của chính mình”</span> – theo lời chia sẻ của Degrey’s founder. Là một local brand mang khuynh hướng Á Đông, kết hợp giữa hai yếu tố truyền thống và hiện đại, Degrey luôn cố gắng mang đến những thông điệp văn hoá ý nghĩa qua từng đường nét thiết kế. Tiếp theo đó sự sang trọng, thanh lịch cũng là những yếu tố tạo nên một Degrey đầy sức hút, sự lựa chọn hoàn hảo dành cho các bạn trẻ yêu thích phong cách hoài cổ nhưng vẫn muốn thoát xác trong những bộ cánh mới mẻ hơn.
+            </p>
+            <p>
+                Degrey sẽ sớm ra mắt các sản phẩm mới để phục vụ khách hàng đam mê thời trang đường phố. Hãy đón chờ những sản phẩm mới nhất từ Degrey trong thời gian sắp tới.
+            </p>
+
+            <div class="video-container">
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/H7vcKCjX-IE?si=KKcRmKHiyDVbdQ3Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <p>
+                Degrey xin gửi lời cảm ơn đến tất cả những khách hàng đã, đang và sẽ ủng hộ Degrey cũng như Xoài thời gian qua và sắp tới. Cảm ơn rất nhiều !
+            </p>
+            <img  height="400" src="~/Content/Image/anh-3.png" width="600" />
+            <p>
+                Hiện nay, Degrey vẫn đang tiếp tục hoàn thiện và phát triển về sản phẩm cũng như mở rộng nhiều phong cách thời trang.
+            </p>
+            <img  height="400" src="~/Content/Image/anh-4.png" width="600" />
+            <p>Degrey may mắn được hợp tác với các thương hiệu cùng những người có sức ảnh hưởng đến giới trẻ tạo nên sự khác biệt và  góp phần bé nhỏ thổi hồn Việt vào thời trang.</p>
+            <img  height="400" src="~/Content/Image/anh-5.png" width="600" />
+            <div class="main-content">
+                <a href=" https://www.facebook.com/bitishunter/videos/426291141383234/"> <strong>Degrey x Biti's Hunter (Hơi thở Việt)</strong></a>
+                <img height="400" src="~/Content/Image/anh-6.png" />
+                <div class="main-content">
+
+                    <iframe width="600" height="400" src="https://www.youtube.com/embed/O6yvqvjuIgU?si=ywIDPSC4ZoYVFGsK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                    <a href=" https://kenh14.vn/local-brands-x-pepsi-khang-dinh-thuong-hieu-viet-20180514171222596.chn/"> <strong>Degrey x Pepsi (Catch the trend)</strong></a>
+                    <iframe width="600" height="400" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdegrey.saigon%2Fposts%2Fpfbid02NVXhXp3dYs2JLgVMP9S4QMNRyJ1nEqhYLYzKw7iVQNMMyaaDnbHWuHB5TFfpnzsul&show_text=false&width=500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <p>
+                        Không còn xa lạ gì với Degrey – một local brand nổi tiếng với những sản phẩm phong phú về kiểu dáng và thiết kế lạ mắt. Với chương trình hợp tác cùng Pepsi, Degrey muốn gửi một thông điệp nhỏ qua bộ sưu tập: “Mình muốn pha màu sắc Á Đông của Degrey kết hợp cùng một thương hiệu bắt nguồn từ châu Âu. Nên các sản phẩm trong bộ sưu tập lần này mang trong mình một điều đặc biệt và mới mẻ”......
+                    </p>
+                    <a href=" https://www.facebook.com/degrey.saigon/photos/a.1024483670978128/5958127490947030/?paipv=0&eav=AfYvihcQgI042mBWzSwghEXuLFIX0HSYQ8t7sEfvAJCsrl6SdDIVkoXD2sCbGZm2ZNg&_rdr"> <strong>Degrey x Samsung Galaxy ZFlip 4</strong></a>
+                    <iframe width="600" height="400" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdegrey.saigon%2Fposts%2Fpfbid02AR4EDuBAzJ47Xgwtv8KvY7KGEiAYXYb1ynJoMAsTbtw3bpmRzDrpADKHGuMM2Ksql&show_text=false&width=500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                    <a href=" https://www.facebook.com/OfficialLinhNgocDam/posts/1869007799930796/"> <strong>Degrey x Linh Ngọc Đàm (Katcream)</strong></a>
+                    <iframe width="600" height="400" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fdegrey.saigon%2Fvideos%2F227980442241532%2F&show_text=false&width=560&t=0" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                    <a href=" https://www.facebook.com/degrey.saigon/posts/1897421773684309/"> <strong>Degrey x Thỏ 7 màu </strong></a>
+                    <iframe width="600" height="400" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FThoBayMau%2Fphotos%2Fa.937874922889819%2F2176044022406230%2F%3Ftype%3D3&show_text=false&width=500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <a href="https://www.facebook.com/degrey.saigon/posts/1897421773684309/">  <strong>Degrey x Koo (Không chỉ là quần áo ) </strong></a>
+                    <iframe width="600" height="400" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fdegrey.saigon%2Fvideos%2F1674569012636254%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                    <iframe width="600" height="400" src="https://www.youtube.com/embed/wnZWXRpGcZ4?si=98iIj7i4G0KAPUFY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>
+                        Không cần phải chạy theo xu hướng thị trường, thị hiếu của số đông. Cứ sáng tạo và tự do theo cách của mình muốn. Đó cũng chính là thông điệp của Koo và Degrey muốn gửi gắm cho các bạn thông qua sự kết hợp này.....
+                    </p>
+                    <a href="https://www.facebook.com/degrey.saigon/posts/2244543462305470/?locale=vi_VN">  <strong>Degrey x Mang thời trang đến gần underground (Degrey x Blacka) </strong></a>
+                    <img height="400" src="~/Content/Image/anh-7.png" />
+                    <iframe width="600" height="400" src="https://www.youtube.com/embed/FXxF19jJwMk?si=Tmv_UMdurIOknJdr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="600" height="400" src="https://www.youtube.com/embed/gEJKVTKAhvE?si=zIC8tCkkXgla8F5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <a href="https://www.facebook.com/watch/?v=2141965986014794">  <strong>Degrey x Dossin (Foudation wind Jacket) </strong></a>
+                    <iframe width="600" height="400" src="https://www.youtube.com/embed/FXxF19jJwMk?si=oMEjBt62t8e6J82e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>
+                        Sản phẩm được lấy cảm hứng từ album "Foundation Vol. 4" của rapper tài năng Basick, quán quân cuộc thi “Show Me The Money" mùa 4."Chúng ta luôn phải tuân theo quy luật của cuộc sống.Nhưng với thời trang thì KHÔNG.Chúng tôi thoải mái làm những điều khác biệt.VÌ VẬY CHÚNG TÔI TÌM ĐẾN NHAU".......
+                    </p>
+                    <a href="http://https//www.facebook.com/watch/?v=754349858105316">  <strong>Degrey x Dirty Coins (Make love Not war) </strong></a>
+                    <iframe width="600" height="400" src="https://www.youtube.com/embed/gEJKVTKAhvE?si=7_aWSwb7pk84xwH4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>
+                        Degrey với các dự án đồng hành cùng Dirty coins không còn gì xa lạ đối với các bạn. Thông qua bst lần này, tụi mình muốn nhắn nhủ thông điệp thế giới cần tình yêu, hãy tạo yêu thương đừng gây chiến tranh.....
+                    </p>
+                    <a href="https://degrey.vn/blogs/news/degrey-x-dat-g"> <strong>Degrey x Đạt G  </strong></a>
+                    <iframe width="600" height="400" src="https://www.youtube.com/embed/rO92dxA-Ftc?si=nQ-Yqozu4kCc7ygx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <h3>
+                        Một số dự án khác:
+                    </h3>
+                    <a href="https://www.facebook.com/cxg.vn/posts/1228362480919583/"> <h4>Degrey x Cối Xay Gió</h4>   </a>
+                    <a href="https://www.facebook.com/photo?fbid=1470815350063818&set=a.343612512784113"> <h4>Degrey x Colkids</h4>   </a>
+                    <a href="https://www.facebook.com/degrey.saigon/posts/2667003790059433/"> <h4>Degrey x Sly</h4></a>
+                    <h4>...</h4>
+                    <img height="400" src="~/Content/Image/anh-8.png" />
+                    <img height="400" src="~/Content/Image/anh-9.png" />
+                    <div class="store">
+                        <p>Hệ thống cửa hàng:</p>
+                    </div>
+                    <div class="store">
+
+                        <p><strong>SÀI GÒN:</strong></p>
+                        <p>Q.Phú Nhuận: 43 Huỳnh Văn Bánh</p>
+                    </div>
+                    <img height="400" src="~/Content/Image/anh-10.png"/>
+                    <div class="store">
+                        <p>
+                            Link bài viết về Degrey
+
+                        </p>
+                        <a href="https://dantri.com.vn/giai-tri/degrey-thoi-trang-cuc-chat-tren-pho-khong-ngung-lot-xac-de-vuon-tam-20200605193027.htm">https://dantri.com.vn/giai-tri/degrey-thoi-trang-cuc-chat-tren-pho-khong-ngung-lot-xac-de-vuon-tam-20200605193027.htm</a>
+                        <a href="https://kenh14.vn/degrey-thoi-trang-duong-pho-cuc-chat-khong-ngung-lot-xac-de-vuon-tam-20200604122813325.chn?fbc">https://kenh14.vn/degrey-thoi-trang-duong-pho-cuc-chat-khong-ngung-lot-xac-de-vuon-tam-20200604122813325.chn?fbc</a>
+                        <a href="https://kenh14.vn/degrey-xu-huong-moi-cho-thoi-trang-a-dong-20180403133034643.chn">https://kenh14.vn/degrey-xu-huong-moi-cho-thoi-trang-a-dong-20180403133034643.chn</a>
+                        <a href="https://kenh14.vn/cung-degrey-thoi-bung-ca-tinh-mua-he-nay-20190604233452921.chn">https://kenh14.vn/cung-degrey-thoi-bung-ca-tinh-mua-he-nay-20190604233452921.chn</a>
+                        <a href="https://kenh14.vn/cung-degrey-chung-tay-tuyen-truyen-phong-tranh-covid-19-20200328123054299.chn">https://kenh14.vn/cung-degrey-chung-tay-tuyen-truyen-phong-tranh-covid-19-20200328123054299.chn</a>
+                        <a href="https://parttimestore.vn/diem-danh-4-mau-ao-khoac-degrey-chat-nhat-mua-dong-2019-n62030.html">https://parttimestore.vn/diem-danh-4-mau-ao-khoac-degrey-chat-nhat-mua-dong-2019-n62030.html</a>
+                        <a href="https://kenh14.vn/bat-nhip-xu-huong-streetstyle-dip-cuoi-nam-voi-loat-bst-cool-ngau-ca-tinh-2019122517075416.chn">https://kenh14.vn/bat-nhip-xu-huong-streetstyle-dip-cuoi-nam-voi-loat-bst-cool-ngau-ca-tinh-2019122517075416.chn</a>
+                        <a href="https://saostar.vn/thoi-trang/hot-trend/degrey-thoi-trang-cuc-chat-tren-pho-khong-ngung-lot-xac-de-vuon-tam-7584.html">https://saostar.vn/thoi-trang/hot-trend/degrey-thoi-trang-cuc-chat-tren-pho-khong-ngung-lot-xac-de-vuon-tam-7584.html</a>
+                        <a href="https://yeah1.com/style/degrey-thoi-trang-cuc-chat-tren-pho-khong-ngung-lot-xac-de-vuon-tam-M6apvMREGg.html?fbc">https://yeah1.com/style/degrey-thoi-trang-cuc-chat-tren-pho-khong-ngung-lot-xac-de-vuon-tam-M6apvMREGg.html?fbc</a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+</body>
+</html>
