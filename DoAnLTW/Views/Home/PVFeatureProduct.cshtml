@@ -1,0 +1,37 @@
+﻿@model DoAnLTW.Models.ViewModel.HomeProductVM
+
+@if (Model.FeaturedProducts != null && Model.FeaturedProducts.Any())
+{
+    <section class=" container-fluid feartureProd">
+        <h2> Sản phẩm nổi bật</h2>
+        <div class=" fearture-container">
+            @foreach (var product in Model.FeaturedProducts)
+            {
+                <div class="fproduct-item">
+                    <div>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = product.ProductID })">
+                            <ing src="@Html.DisplayFor(ModelItem => product.ProductImage)" />
+                        </a>
+                    </div>
+                    <div>
+                        <p class=" prodPrice">
+                            @Html.DisplayFor(modelIterm => product.ProductPrice)
+                        </p>
+                        <p class=" prodName">
+                            @Html.DisplayFor(modelIterm => product.ProductName)
+                        </p>
+                        <p class=" prodCate">
+                            @Html.DisplayFor(modelIterm => product.Category.CategoryName)
+                        </p>
+                        <p class=" prodSale">
+                            Đã bán:&nbsp; @Html.DisplayFor(modelIterm => product.OrderDetails.Count)
+                        </p>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </section>
+    <hr />
+}
+

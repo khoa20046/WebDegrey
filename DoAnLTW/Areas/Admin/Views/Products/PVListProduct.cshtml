@@ -46,6 +46,11 @@
 
 
     </table>
+    @*phan trang*@
+    <!--<div class="pagination-container">
+        @*@Html.PagedListPager(Model.Products, page => Url.Action("Index", new {page, searchTern = Model.SearchTerm, minPrice = Model.MinPrice,
+   MaxPrice = Model.MaxPrice , sortOrder = Model.SortOrder}))*@
+    </div>-->
 }
 else
 {
