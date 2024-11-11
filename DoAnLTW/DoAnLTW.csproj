@@ -137,6 +137,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -277,6 +278,16 @@
     <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\PVCreateEditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\PVProductInfo.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\PVCreateEditCustomers.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\PVDetailsDeleteCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\Customers\PVDetailsDeleteCustomer.cshtml" />
     <Content Include="Areas\Admin\Views\Products\PVListProduct.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
@@ -306,7 +317,6 @@
     <Content Include="Views\Home\SanPham.cshtml" />
     <Content Include="Views\Home\Store.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\ShoppingCart.cshtml" />
     <Content Include="Views\Home\ChiTietSanPham1.cshtml" />
     <Content Include="Views\Home\ChiTietSanPham2.cshtml" />
     <Content Include="Views\Home\ChiTietSanPham3.cshtml" />
@@ -323,7 +333,6 @@
     <Content Include="Views\Home\PVFeatureProduct.cshtml" />
     <Content Include="Views\Home\PVNewProduct.cshtml" />
     <Content Include="Views\HomeProductVM\Index.cshtml" />
-    <Content Include="Views\ProductDetailsVM\ProductDetails.cshtml" />
     <Content Include="Views\Home\ProductDetails.cshtml" />
     <Content Include="Views\Home\PVRelatedProduct.cshtml" />
     <Content Include="Views\Home\PVTopProduct.cshtml" />
@@ -331,6 +340,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\ProductDetailsVM\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

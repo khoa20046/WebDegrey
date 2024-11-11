@@ -37,7 +37,7 @@ namespace DoAnLTW.Controllers
                 {
                     Username = model.Username,
                     Password = model.Password,
-                    UserRole = "Customer"
+                    UserRole = "C"
                 };
                 db.Users.Add(user);
 
