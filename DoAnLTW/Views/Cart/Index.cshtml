@@ -1,0 +1,130 @@
+﻿@model DoAnLTW.Models.ViewModel.Cart
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<style>
+    .info-cart {
+      
+        
+        
+    }
+
+    .btn-buy {
+        
+        background-color: black;
+        color: white;
+        
+        text-decoration:none;
+    }
+
+    .cart-section {
+        background-color: white;
+        border: 1px groove #ffffff;
+        border-radius: 10px;
+        padding: 10px 5px;
+        margin: 10px;
+    }
+
+    .cart-button {
+        width: 250px;
+        border: 1px solid #888888;
+        margin: 5px;
+    }
+
+    .shoppingcart tr {
+        font-size: smaller;
+    }
+</style>
+
+<script language="JavaScript">
+    function cartUpdateQuantity(id, newQuantity) {
+        if (newQuantity < 1) return;
+        const form = document.createElement('form');
+        form.method = 'post';
+        form.action = '@Url.Action("UpdateQuantity", "Cart")';
+
+        const idInput = document.createElement('input');
+        idInput.type = 'hidden';
+        idInput.name = 'id';
+        idInput.value = id;
+        form.appendChild(idInput);
+
+        const quantityInput = document.createElement('input');
+        quantityInput.type = 'hidden';
+        quantityInput.name = 'quantity';
+        quantityInput.value = newQuantity;
+        form.appendChild(quantityInput);
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
+
+
+
+<h2>Giỏ Hàng</h2>
+<div class="info-cart">
+    @if (!Model.Items.Any())
+    {<p>Bạn chưa có sản phẩm nào trong giỏ.</p>}
+    else
+    {
+        <div class="col-md-8 cart-section">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Đơn Giá</th>
+                        <th>Thành Tiền</th>
+                        <th title="Xóa tất cả mặt hàng trong giỏ">
+                            <a href="@Url.Action("ClearCart","Cart", null)"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAYFBMVEX///8AAADu7u5LS0vW1tZSUlL7+/tbW1ubm5umpqbS0tKKioq8vLzm5uYwMDDg4OB0dHRubm6xsbHJyckVFRVnZ2dDQ0MjIyP19fWTk5NhYWGBgYEpKSkdHR08PDwNDQ02nzbqAAAErklEQVR4nO2d6YKiOhBGDSACiii4NTr2+7/leMdrt6QSMyaVZWa+8xshR0LIRtVsBgAAAPwJlEO1tKAaytglJ5yqnbBkV51il35Kl9uq/EfexS7/M+3BxUWIQxvb4ImNm4sQm9gG3xSuLkIUsR2+2LrLbGM7fGHdkH2zi+3whbuLELEdHpQcMqm8OiEDmQBABjIB+Ltljv3KQH/8Y2TWxh59u4ZMACADmQD8VTJkPGMjE6Kcs7ZojMgFu6wMPypWF/k35qsUjlM4ZX/ez3MjcsE+zT/5lH9j/sl8f+4dKmO7J39gXC5767tTOE1T+iG3nJM6zWOXXMXcbmL6HLvcas42Lm2SN+Z2a2wemz6xh//BpbeQqWKXWkdlIfMRu9A6Pv71O7Mi3ac0WK8sZLJF7GKrWWQWMrMP0n9KgU+bR+bWy3RcqPTDwbKveUrwqVnbL7OPib04L6O1yo3hPC6SYTwPLi43TlkyJDNNAAAAqVBGahn5r1u2TV3VTRtYyMtl2/rer1lXQffsddW9d3ipGTfXFd9Dm0XDd1oTzdNl2fajTWY2r8HuTXd9uqztTKZMNt20uOc5q5n95LIbqwEmQVp+2NmMwW0uO92SZzX0J5RLaVARaHOovIn1g6NJa+UdmJZT129ykpcgthwtWiHPOec8tddAJsvMOZoAyLgDGSOQcQcyRiDjTiIyXb1cVi9f1221XNaG3ncKMuXwf8f9qp1K/T7iVW8rAZnyafFQ3TMsn9ZKqxc2CchMFkJVNuVk3ffF8mR8melmLdUQRFop1Q/C48tIBaCjQ2nUKvJ0ZTrpyDX54xt5MU7bpkWX6aUjBdkZYj4iGRmyD6KWmoCylo/QNgGQgQxkIAMZyEAGMpCBDGQgAxnIQAYykIEMZCADGchABjKQgQxkIAMZyEAGMpCBDGQgAxnIQAYykIEMZCADGchABjJvyZCimr/SqJOVkaNQH8lHdIOc3ED7aVN0mdl1eiSNrtxOA2OIq/ZU8WVWkwN3ii99+mlkDH1gjPgy0yRhqoAk04/OXoTjSECmfSqrOoT3c0iOV+FXEpCZZfWjHtWaw7JHm7fTHXE/LAGZWdn22zwfe304wjLrxzzf9q/DSSUhwwVkjEDGHcgYgYw7kDECGXcCyRyChDjs5AjrLDLdKJ117RrP+rcY5JgOI8d/KIe9ED+043ZO6h/SZVnCNZIAh3YZYN6FZL9ZssRsJRlCFgEyk7ckX4RdcgOZWs4xHaKekVq247noIM25CLH13jhnJOO4PvbTW7RycyY+bZLzvEVP8niMTHWbZqI6eE4aX9A0HlytDqm/visarWTiyPWcqvJqMQXpVULebMIyh5YSxcl5QsEqIcFuf/15bKdvVMlOroOXgLqnQZX25sL4kO4V57+9kwf2upYNpL/xC86I1yRj5p3juR86NqGsG/ozyed8h7X1VD0198o2bpZMbEbydn7AG+86010mDMzVmazfhYS7w1FqK5p/Nux5IrJoicIOHt7Phaah8c3RSz+QrBSHcfE04xAj9SFPboM0bPy53Gpa4OTHuddZrS5oC73xPN2YBXx79v7ngckMpydYZjCNlE2AjM7zxuK1/xMRwW8ruhr8QgAAAABJRU5ErkJggg==" style="max-height:80px;"/> </a>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model.Items) {
+                        <tr>
+                            <td>
+                                <img src="@item.ProductImage" alt="@item.ProductName" style="max-height:80px;" />
+                            </td>
+                            <td class="col-md-3">@item.ProductName</td>
+                            <td>
+                                @using (Html.BeginForm("UpdateQuantity", "Cart", FormMethod.Post))
+                                {
+                                    <input type="hidden" name="id" value="@item.ProductID" />
+                                    <button type="button" style="width: 20px;" onclick="cartUpdateQuantity(@item.ProductID, @item.Quantity - 1)">-</button>
+                                    <input type="number" name="quantity" value="@item.Quantity" min="1" max="1000" style="width: 40px; text-align:right;" readonly />
+                                    <button type="button" style="width: 20px;" onclick="cartUpdateQuantity(@item.ProductID, @item.Quantity + 1)">+</button>
+                                }
+                            </td>
+                            <td>@item.UnitPrice.ToString("N0") đ</td>
+                            <td>@item.TotalPrice.ToString("N0") đ</td>
+                            <td>
+                                <a href="@Url.Action("RemoveFromCart", "Cart", new { id = item.ProductID })">
+                                    <img src="~/Images/remove.png" style="max-height:20px;" />
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    <div class="col-md-3 cart-section">
+        <div><strong>Tổng giá trị: &nbsp;<span style="color: red;">@Model.TotalValue().ToString("N0") đ</span></strong></div>
+        <div>@Html.ActionLink("Mua hàng", "Index", "Payment", null, new { @class = "btn-buy" })</div>
+    </div>
+</div>
+<div class="col-md-12">@Html.ActionLink("Tiếp tục mua hàng", "SanPham", "Home", null, new { @class = "btn-buy" })</div>
+
+
+
+
+
+
+

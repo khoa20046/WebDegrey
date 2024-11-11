@@ -1,0 +1,45 @@
+﻿@model DoAnLTW.Models.ViewModel.HomeProductVM
+@using PagedList.Mvc
+
+
+<!--Hiển thị danh sách sản phẩm-->
+@if (Model.FeaturedProducts != null && Model.FeaturedProducts.Any())
+{
+    <section class="container-fluid listproduct ">
+        <h2> Sản phẩm mới</h2>
+        <ul class=" list-container">
+            @foreach (var product in Model.FeaturedProducts)
+            {
+                <li class=" fproduct-item">
+                    <div>
+                        <a href="@Url.Action("ProductDetail", "Home", new { id = product.ProductID })">
+                            <ing src="@Html.DisplayFor(ModelItem => product.ProductImage)" />
+                        </a>
+                    </div>
+                </li>
+                <div>
+                    <p class=" prodPrice">
+                        @Html.DisplayFor(modelIterm => product.ProductPrice)
+                    </p>
+                    <p class=" prodName">
+                        @Html.DisplayFor(modelIterm => product.ProductName)
+                    </p>
+                    <p class=" prodSale">
+                        Đã bán:&nbsp; @Html.DisplayFor(modelIterm => product.OrderDetails.Count)
+                    </p>
+                </div>
+
+            }
+    </section>
+    <!--Hiển thị phân trang-->
+    <div class=" pagination-container">
+        @Html.PagedListPager(Model.NewProducts, page => Url.Action("Index", new { page, searchTerm = Model.SearchTerm }))
+    </div>
+
+}
+else
+{
+    <p>Không tìm được sản phẩm nào phù hợp</p>
+}
+
+

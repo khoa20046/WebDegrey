@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DoAnLTW.Models;
 using DoAnLTW.Models.ViewModel;
+using PagedList;
 
 namespace DoAnLTW.Areas.Admin.Controllers
 {
@@ -58,7 +59,10 @@ namespace DoAnLTW.Areas.Admin.Controllers
             }
             model.SortOrder = sortOrder;
 
-            model.Products = products.ToList();
+            //int pageNumber = page ?? 1;
+            //int pageSize = 2;
+
+            //model.Products = products.ToPagedList(pageNumber, pageSize);
             return View(model);
         }
 
