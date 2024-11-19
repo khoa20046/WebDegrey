@@ -12,25 +12,27 @@
     <title>Search</title>
     <style>
 
-/*        .search-container, .order-container {
-            padding-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }*/
+      
+
+        .search-button {
+            height: 30px;
+            width: 100px;
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <!--Form tìm kiếm -->
-    @using (Html.BeginForm("Index", "Products,", FormMethod.Get))
+    @using (Html.BeginForm("Index", "Products", FormMethod.Get))
     {
         <div>
-            @Html.TextBoxFor(m=> m.SearchTerm,new
+            @Html.TextBoxFor(m => m.SearchTerm, new
             {
-            @class = "from-control",
-            placeholder = "Nhập tên, mô tả hoặc loại sản phẩm"
+                @class = "from-control",
+                placeholder = "Nhập tên, mô tả hoặc loại sản phẩm"
             })
-            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+            <button type="submit" class="search-button">Tìm kiếm</button>
         </div>
 
     }

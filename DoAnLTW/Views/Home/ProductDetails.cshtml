@@ -1,40 +1,147 @@
 ﻿@model DoAnLTW.Models.ViewModel.ProductDetailsVM
 @{
-    ViewBag.Title = "ProductDetail";
+    ViewBag.Title = "ProductDetails";
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
 
 <head>
-    <style>
-        .pro {
-            padding: 50px 10px;
-            background-color: ghostwhite;
+    <style type="text/css">
+        .container {
+            float: left;
+            width: 1060px;
+            margin: 0 auto;
         }
 
-        .pro-section {
-            background-color: white;
-            border: 1px groove #ffffff;
+        #img-prod {
+            width: 560px;
+            height: 1700px;
+            float: left;
+        }
+
+        #infor-prod {
+            width: 500px;
+            float: right;
+        }
+
+        .box-prod {
+            width: 525px;
+            height: 650px;
+            background-color: #e1e1e1;
             border-radius: 10px;
-            margin: 10px;
         }
 
-            .pro-section img {
-                max-height: 250px;
-                max-width: 200px;
-                padding: 5px;
-            }
+        .box-img {
+            margin-left: 15px;
+            width: 500px;
+            height: 500px;
+        }
 
-        .pro-price {
-            font-weight: bold;
-            font-size: larger;
+        #ThumbNailMainContainer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ThumbImage {
+            height: 91px;
+            width: 91px;
+            border: 6px solid #ddd;
+        }
+
+        .fm-size-img-prod {
+            margin-top: 20px;
+            width: 490px;
+            height: 490px;
+            border-radius: 10px;
+        }
+
+        .txt-prod {
+            font-size: 25px;
+        }
+
+        .product-price {
+            font-size: 30px;
             color: red;
+            font-weight: bold;
         }
 
-        .pro-sale {
-            font-weight: lighter;
+        .product-old-price {
+            font-size: 30px;
+            color: #888;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+
+        .size {
+            margin-top: 40px;
+        }
+
+        .txt-size {
+            color: grey;
+        }
+
+        .button {
+            border: 1px solid transparent;
+            background-color: black;
+            color: white;
+            height: 25px;
+            width: 25px;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+
+
+        .quantity-input {
+            width: 45px;
+            height: 45px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .quantity-minus {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .quantity-plus {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .total {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .buy {
+        }
+
+        .btn-buy {
+            width: 350px;
+            height: 70px;
+            background-color: black;
+        }
+
+        .fm-buy {
+            font-weight: bold;
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            margin-left: auto;
+            text-align: center;
         }
     </style>
 </head>
+
 
 <div class="container-fluid pro">
     <div class="row-horizontal">
@@ -44,7 +151,7 @@
             <img src="@Model.product.ProductImage" />
         </div>
 
-        <!-- Middle Section -->         
+        <!-- Middle Section -->
         <div class="col-md-5 pro-section">
             <h4><strong>@Html.DisplayFor(model => model.product.ProductName)</strong></h4>
             <p class="pro-sale">Đã bán:&nbsp;@Model.product.OrderDetails.Count</p>
@@ -85,3 +192,184 @@
         @Html.Partial("_PVTopProduct", Model)
     </div>
 </div>
+
+
+
+
+
+
+
+<html>
+<head>
+    <title> Tinh tien</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+
+
+
+    <script type="text/javascript">
+        function handleMinus(ele) {
+            if (ele.nextSibling.nextSibling.value > 1) {
+                ele.nextSibling.nextSibling.value = parseInt(ele.nextSibling.nextSibling.value) - 1;
+                var final = parseFloat(ele.parentNode.getElementsByClassName('amount')[0].value) * parseFloat(ele.nextSibling.nextSibling.value);
+                ele.parentNode.getElementsByClassName('total')[0].innerHTML = final;
+            }
+        }
+
+        function handlePlus(ele) {
+            if (ele.previousSibling.previousSibling.value > 0) {
+                ele.previousSibling.previousSibling.value = parseInt(ele.previousSibling.previousSibling.value) + 1;
+                var final = parseFloat(ele.parentNode.getElementsByClassName('amount')[0].value) * parseFloat(ele.previousSibling.previousSibling.value);
+                ele.parentNode.getElementsByClassName('total')[0].innerHTML = final;
+            }
+        }
+    </script>
+
+    <script src="~/Scripts/jquery-3.7.0.min.js">
+
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.ThumbContainer img').on({
+                mousemove: function () {
+                    $(this).css({
+                        'cursor': 'pointer',
+                        'border': '6px solid grey'
+                    });
+                },
+
+                mouseout: function () {
+                    $(this).css({
+                        'border': '6px solid #ddd'
+
+                    });
+                },
+
+                click: function () {
+                    var CImage = $(this).attr('src');
+
+                    $('#MainImage').fadeOut(500, function () {
+                        $(this).attr('src', CImage);
+                    }).fadeIn(500);
+
+                    //attr('src', x);
+                }
+
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+
+
+    <div class="container">
+
+        <div id="img-prod">
+            <div class="box-prod">
+                <div class="box-img">
+                    <img id="MainImage" class="fm-size-img-prod" src="@Model.product.ProductImage" />
+                </div>
+
+                <div id="ThumbNailMainContainer">
+                    <div class="ThumbContainer">
+                        <img class="ThumbImage" src="@Model.product.ProductImage" height="91px" width="91px" />
+
+                    </div>
+                    <div class="ThumbContainer">
+                        <img class="ThumbImage" src="https://product.hstatic.net/1000281824/product/dscf0022_1_1_957c710832e947d0be763a242181a0be.jpeg" height="91px" width="91px" />
+                    </div>
+                    <div class="ThumbContainer">
+                        <img class="ThumbImage" src="https://product.hstatic.net/1000281824/product/dscf0090_1_1_a921c636baab4aaca5dbb3abfa09af87.jpeg  " height="91px" width="91px" />
+
+                    </div>
+                    <div class="ThumbContainer">
+                        <img class="ThumbImage" src="https://product.hstatic.net/1000281824/product/z5855309640805_3dc1ec9028e2672f273c87f8fc7b7c15_a0a2625c199848bab10f22a35171f03f.jpg" height="91px" width="91px" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="infor-prod">
+            <h3 class="txt-prod">
+                @Html.DisplayFor(model => model.product.ProductName)
+            </h3>
+            <div class="cost">
+                <span class="product-price">@Model.product.ProductPrice.ToString("C")</span>
+
+            </div>
+
+            <div class="size">
+                <span class="txt-size"> SIZE:</span>
+                <button class="button">S</button>
+                <button class="button">M</button>
+                <button class="button">L</button>
+            </div>
+
+            <br />
+
+            <div class="item">
+
+                <button class="quantity-minus" onclick="handleMinus(this)">-</button>
+                <input class="quantity-input" id="sonuc" type="text" value="1" />
+                <button class="quantity-plus" type=button onclick="handlePlus(this)">+</button>
+                <input type="hidden" class="amount" value="220" />
+
+                <p class="txt-box-bill">Tạm tính</p>
+                <span class="total">220</span><span class="total">,000₫</span>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+
+        <div class="buy">
+            <button class="btn-buy"><a class="fm-buy" href="/Home/ShoppingCart">Mua Hàng</a></button>
+        </div>
+
+        <div class="infor-prod">
+            <div class="title-infor">
+                <br />
+                <br />
+                <h2>THÔNG TIN SẢN PHẨM</h2>
+            </div>
+
+            <div class="des-prod" style="display:block">
+                <div class="description-productdetail typeList-style">
+                    @Model.product.ProductDescription
+                    <p>&nbsp;</p><p>+ HƯỚNG DẪN BẢO QUẢN SẢN PHẨM DEGREY:</p>
+                    <p>- Giặt ở nhiệt độ bình thường, với đồ có màu tương tự.</p>
+                    <p>- Không dùng hóa chất tẩy lên sản phẩm</p>
+                    <p>- Bạn nên giặt tay và LỘN NGƯỢC ÁO trước khi giặt.</p>
+                    <p>- Không ủi trực tiếp lên hình in.</p>
+                    <p>- Hạn chế sử dụng máy sấy và ủi (nếu có) chỉ nên ủi lên vải hoặc sử dụng bàn ủi hơi nước ở nhiệt độ thích hợp.</p>
+                    <p>&nbsp;</p>
+                    <p>+ CHÍNH SÁCH ĐỔI SẢN PHẨM:</p>
+                    <p>1.Điều kiện đổi hàng</p>
+                    <p>- Bạn lưu ý giữ lại hoá đơn để đổi hàng trong vòng 30 ngày.</p>
+                    <p>- Đối với mặt hàng giảm giá, phụ kiện cá nhân (áo lót, khẩu trang, vớ ...) không nhận đổi hàng.</p>
+                    <p>- Tất cả sản phẩm đã mua sẽ không được đổi trả lại bằng tiền mặt.</p>
+                    <p>- Bạn có thể đổi size hoặc sản phẩm khác trong 30 ngày (Lưu ý: sản phẩm chưa qua sử dụng, còn tag nhãn và hóa đơn mua hàng.)</p>
+                    <p>- Bạn vui lòng gửi cho chúng mình clip đóng gói và hình ảnh của đơn hàng đổi trả của bạn, nhân viên tư vấn sẽ xác nhận và tiến hành lên đơn đổi trả cho bạn.</p>
+                    <p>&nbsp;</p>
+                    <p>2. Trường hợp khiếu nại</p>
+                    <p>- Bạn phải có video unbox hàng</p>
+                    <p>- Quay video rõ nét 6 mặt của gói hàng</p>
+                    <p>- Quay rõ: Tên người nhận, mã đơn, địa chỉ, số điện thoại.</p>
+                    <p>- Clip không cắt ghép, chỉnh sửa</p>
+                    <p>- Degrey xin không tiếp nhận giải quyết các trường hợp không thỏa các điều kiện trên.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+
+

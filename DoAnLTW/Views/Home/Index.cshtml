@@ -51,28 +51,57 @@
         text-decoration: line-through;
         margin-left: 10px;
     }
+
+    .search-input {
+        height: 30px;
+        width: 195px;
+        border-radius: 10px;
+    }
+
+    .search-button {
+        height: 30px;
+        width: 70px;
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+    }
 </style>
 
 @*Tìm kiếm *@
-<section class="container-fluid searchProd">
-    <h2>Tìm kiếm sản phẩm</h2>
-    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
-    {
-        <div class="form-group search-container">
-            @Html.TextBoxFor(m => m.SearchTerm, new
-       {
-           @class = "search-input",
-           placeholder = "Nhập tên, mô tả loại sản phẩm"
-       })
+@*<section class="container-fluid searchProd">
+        <h2>Tìm kiếm sản phẩm</h2>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <div class="form-group search-container">
+                @Html.TextBoxFor(m => m.SearchTerm, new
+           {
+               @class = "search-input",
+               placeholder = "Nhập tên, mô tả loại sản phẩm"
+           })
 
-            <button type="submit" class="search-button">Tìm kiếm</button>
-        </div>
-    }
-</section>
-<hr />
+                <button type="submit" class="search-button">Tìm kiếm</button>
+            </div>
+        }
+    </section>
+    <hr />*@
 
-@*sản phẩm nổi bật*@
-@Html.Partial("PVFeatureProduct", Model)
+<!--Form tìm kiếm -->
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <div>
+        @Html.TextBoxFor(m => m.SearchTerm, new
+        {
+            @class = "from-control",
+            placeholder = "Nhập tên, mô tả hoặc loại sản phẩm"
+        })
+        <button type="submit" class="search-button">Tìm kiếm</button>
+    </div>
 
-@*Sản Phẩm Mới*@
+}
+@* Form kết quả tìm kiếm *@
 @Html.Partial("PVNewProduct", Model)
+
+
+
+
+

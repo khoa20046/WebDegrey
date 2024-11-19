@@ -6,6 +6,10 @@
 }
 
 <style>
+    body {
+        margin: 0px;
+        font-family: Arial, sans-serif;
+    }
     .info-cart {
       
         
@@ -13,9 +17,10 @@
     }
 
     .btn-buy {
+      
+        align-content: center;
         background-color: black;
         color: white;
-        text-decoration:none;
     }
 
     .cart-section {
@@ -118,7 +123,7 @@
         <div>@Html.ActionLink("Mua hàng", "Index", "Payment", null, new { @class = "btn-buy" })</div>
     </div>
 </div>
-<div class="col-md-12">@Html.ActionLink("Tiếp tục mua hàng", "SanPham", "Home", null, new { @class = "btn-buy" })</div>
+<div class="col-md-12 ">@Html.ActionLink("Tiếp tục mua hàng", "Index", "Home", null, new { @class = "btn-buy" })</div>
 
 
 
