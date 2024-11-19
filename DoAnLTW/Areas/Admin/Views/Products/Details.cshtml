@@ -2,126 +2,58 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
 
-@*<h2>Details</h2>
+<h2>Details</h2>
 
-    <div>
-        <h4>Product</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ProductName)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.ProductDescription)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ProductDescription)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.ProductPrice)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ProductPrice)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.ProductImage)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ProductImage)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Category.CategoryName)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Category.CategoryName)
-            </dd>
-
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>*@
-
-<head>
-    <style>
-        img {
-            height: 250px;
-            max-width: 250px;
-        }
-
-        .div-horizontal {
-            display: flex
-        }
-    </style>
-</head>
-
-<h2>CHỈNH SỬA</h2>
-
-<div class="container-fluid">
+<div>
+    <h4>Product</h4>
     <hr />
-    <div class="div-horizontal">
-        <div class="col-md-4">
-            <img src="@Html.DisplayFor(model => model.ProductImage)" />
-        </div>
-        <div class="col-md-8">
-            <dl>
-                <dt>Tên sản phẩm</dt>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.ProductName)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
 
-                <dt>
-                    Mô tả
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.ProductDescription)
-                </dd>
+        <dd>
+            @Html.DisplayFor(model => model.ProductDescription)
+        </dd>
 
-                <dt>
-                    Giá
-                </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.ProductPrice)
-                </dd>
-                <dd>
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
 
-                </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductImage)
+        </dt>
 
-                <dt>
-                    Danh mục
-                </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductImage)
+        </dd>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Category.CategoryName)
-                </dd>
-                <dt style="padding:10px"></dt>
-                <dd style="padding:10px">
-                    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary  btn-sm" })
-                    @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary  btn-sm" })
-                </dd>
-            </dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
 
-        </div>
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
 
-
-    </div>
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -5,17 +5,52 @@
 }
 
 <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        height: 420px;
+        width: 300px;
+    
+        justify-content: center;
+    }
+
     .accountbtn {
+        margin-top: 30px;
         width: 275px;
         height: 40px;
-        border: 1px solid #808080;
-        margin: 5px;
+        border-radius: 10px;
         align-content: center;
+        background-color:black;
+        color:white;
     }
+
+    .form-group {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 5px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+
+    .box-login {
+        height: 30px;
+        width: 180px;
+        border-radius:10px;
+    }
+
+
+   
+ 
 </style>
 
+
 <!DOCTYPE html>
-<div>
+<div class="container">
+
     @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()
@@ -28,7 +63,7 @@
         <div class="form-group">
             @Html.LabelFor(m => m.Username, new { @class = "control-lebel col-md-2" })
             <div class="col-md-4">
-                @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Username, new { @class = "box-login" })
                 @Html.ValidationMessageFor(m => m.Username)
             </div>
         </div>
@@ -37,7 +72,7 @@
         <div class="form-group">
             @Html.LabelFor(m => m.Password, new { @class = "control-lebel col-md-2" })
             <div class="col-md-4">
-                @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Password, new { @class = "box-login" })
                 @Html.ValidationMessageFor(m => m.Password)
             </div>
         </div>
@@ -49,4 +84,7 @@
             </div>
         </div>
     }
+
+
+    
 </div>

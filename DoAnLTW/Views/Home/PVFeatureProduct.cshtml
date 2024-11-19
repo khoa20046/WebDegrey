@@ -1,37 +1,87 @@
 ﻿@model DoAnLTW.Models.ViewModel.HomeProductVM
+@using PagedList.Mvc
 
+<head>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product {
+            width: 23%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+            .product img {
+                width: 100%;
+                height: auto;
+            }
+
+        .product-title {
+            font-size: 16px;
+            margin: 10px 0;
+            text-decoration: none;
+            color: black;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+
+<!--Hiển thị danh sách sản phẩm-->
 @if (Model.FeaturedProducts != null && Model.FeaturedProducts.Any())
 {
     <section class=" container-fluid feartureProd">
         <h2> Sản phẩm nổi bật</h2>
-        <div class=" fearture-container">
+
+
+        <div class="container">
             @foreach (var product in Model.FeaturedProducts)
             {
-                <div class="fproduct-item">
-                    <div>
-                        <a href="@Url.Action("ProductDetail", "Home", new { id = product.ProductID })">
-                            <ing src="@Html.DisplayFor(ModelItem => product.ProductImage)" />
-                        </a>
-                    </div>
-                    <div>
-                        <p class=" prodPrice">
-                            @Html.DisplayFor(modelIterm => product.ProductPrice)
-                        </p>
-                        <p class=" prodName">
+                <div class="product">
+                    <a class="product-title" href="@Url.Action("ProductDetails", "Home", new { id = product.ProductID })">
+                        <img src="@product.ProductImage" width="222px" height="222px" />
+                        <div class="product-title">
                             @Html.DisplayFor(modelIterm => product.ProductName)
-                        </p>
-                        <p class=" prodCate">
-                            @Html.DisplayFor(modelIterm => product.Category.CategoryName)
-                        </p>
-                        <p class=" prodSale">
-                            Đã bán:&nbsp; @Html.DisplayFor(modelIterm => product.OrderDetails.Count)
-                        </p>
-                    </div>
-                </div>
+                        </div>
+                    </a>
+                    <div>
+                        <span class="product-price">@Html.DisplayFor(modelIterm => product.ProductPrice)</span>
 
+                    </div>
+                    <p class=" prodSale">
+                        Đã bán:&nbsp; @product.OrderDetails.Count
+                        @*Đã bán:&nbsp; @Html.DisplayFor(modelIterm => product.OrderDetails.Count)*@
+                    </p>
+                </div>
             }
         </div>
-    </section>
-    <hr />
-}
 
+
+
+
+
+
+        @* <!--Hiển thị phân trang-->
+        <div class=" pagination-container">
+            @Html.PagedListPager(Model.NewProducts, page => Url.Action("Index", new { page, searchTerm = Model.SearchTerm }))
+        </div>*@
+    </section>
+        }
+
+        else
+        {
+        <p>Không tìm được sản phẩm nào phù hợp</p>
+        }
+
+      

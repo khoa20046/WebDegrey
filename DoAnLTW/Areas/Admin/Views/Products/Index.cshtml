@@ -1,44 +1,77 @@
-﻿@model DoAnLTW.Models.ViewModel.ProductSearchVM
-
+﻿@model IEnumerable<DoAnLTW.Models.Product>
 
 @{
     ViewBag.Title = "Search Product";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-<html>
+
+<h2>Index</h2>
 <head>
-
-    <meta name="viewport" content="width=device-width" />
-    <title>Search</title>
     <style>
-
-/*        .search-container, .order-container {
-            padding-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }*/
+        img{
+            height:100px;
+            max-width:100px;
+        }
     </style>
 </head>
-<body>
-    <!--Form tìm kiếm -->
-    @using (Html.BeginForm("Index", "Products,", FormMethod.Get))
+
+<p>
+    @Html.ActionLink("Thêm mới sản phẩm", "Create", null, new { @class = "btn btn-primary btn-sm" })
+</p>
+<table class="table">
+    <tr>
+        <th class="bg-success col-md-3">
+            Tên sản phẩm
+            @*@Html.DisplayNameFor(model => model.ProductName)*@
+        </th>
+        <th class="bg-success col-md-2">
+            Hình ảnh
+            @*@Html.DisplayNameFor(model => model.ProductImage)*@
+           
+        </th>
+        <th class="bg-success col-md-1">
+            Đơn giá
+            @*@Html.DisplayNameFor(model => model.ProductPrice)*@
+        </th>
+        <th class="bg-success col-md-2">
+            Danh mục
+            @*@Html.DisplayNameFor(model => model.Category.CategoryName)*@
+        </th>
+        <th class="bg-success col-md-2">
+            Mô Tả
+            @*@Html.DisplayNameFor(model => model.ProductDescription)*@
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
     {
-        <div>
-            @Html.TextBoxFor(m=> m.SearchTerm,new
-            {
-            @class = "from-control",
-            placeholder = "Nhập tên, mô tả hoặc loại sản phẩm"
-            })
-            <button type="submit" class="btn btn-primary">Tìm kiếm</button>
-        </div>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.ProductImage)" />
+                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+            </td>
 
+
+
+            <td >
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+            </td>
+</tr>
     }
-    @* Form kết quả tìm kiếm *@
-    @Html.Partial("PVListProduct", Model)
 
-</body>
-</html>
-
-
-
+</table>

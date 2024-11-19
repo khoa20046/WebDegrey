@@ -28,7 +28,270 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>a
+            <style type="text/css">
+                body {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+
+                #div-top {
+                    background-color: white;
+                    height: 100px;
+                    width: 100%;
+                    list-style-type: none;
+                    display: inline-flex;
+                }
+
+                #div-left {
+                }
+
+                #div-content {
+                    margin-left: 280px;
+                }
+
+                .logo-top {
+                    margin-top: 10px;
+                    margin-left: 270px;
+                }
+
+                .fm-link-menu-1 {
+                    margin-left: 80px;
+                    text-decoration: none;
+                    color: black;
+                    padding: 10px;
+                }
+
+                    .fm-link-menu-1:hover {
+                        background-color: white;
+                    }
+
+                .fm-link-menu {
+                    margin-left: 30px;
+                    padding: 10px;
+                    text-decoration: none;
+                    color: black;
+                }
+
+                    .fm-link-menu:hover {
+                        background-color: white;
+                    }
+
+                .fm-menu {
+                    color: black;
+                    list-style-type: none;
+                    display: flex;
+                    margin-top: 35px;
+                }
+
+                .ShoppingCart {
+                    margin-left: 330px;
+                    margin-top: 18px;
+                }
+
+                .txtShoppingCart {
+                    margin-left: -13px;
+                    margin-top: 4px;
+                    text-decoration: none;
+                    color: black;
+                }
+
+                .user-logo {
+                    margin-left: 27px;
+                    margin-top: 18px;
+                }
+
+                .txtLogoUser {
+                    margin-left: -16px;
+                    margin-top: 4px;
+                    color: black;
+                    text-decoration: none;
+                }
+
+
+
+                #div-footer {
+                    width: 100%;
+                    height: 380px;
+                    clear: both;
+                    background-color: black;
+                    list-style-type: none;
+                    display: inline-flex;
+                }
+
+                .fm-footer {
+                    display: flex;
+                    color: white;
+                }
+
+                .fm-thongtin {
+                    margin-top: 10px;
+                    margin-left: 310px;
+                    margin-right: 60%;
+                    font-size: 15px;
+                }
+
+                .ten-degrey {
+                    font-size: 23px;
+                    color: grey;
+                }
+
+                .ten-congty {
+                    font-size: 15px;
+                }
+
+                .fm-diachi {
+                    margin-top: 66px;
+                    margin-left: -750px;
+                    font-size: 15px;
+                }
+
+                .fm-hotro {
+                    margin-top: 15px;
+                    margin-left: -450px;
+                    font-size: 15px;
+                }
+
+                .fm-contact {
+                    margin-top: 15px;
+                    margin-left: -200px;
+                    font-size: 15px;
+                }
+            </style>
+            <!DOCTYPE html>
+
+            <html>
+            <head>
+                <meta name="viewport" content="width=device-width" />
+                <title>@ViewBag.Title</title>
+                <link href="~/Content/MyCss/MyCss.css" rel="stylesheet" />
+            </head>
+            <body>
+                <div id="div-top">
+
+                    <div class="logo-top">
+                        <a href="~/Home/TrangChu" itemprop="url">
+                            <img src="https://file.hstatic.net/1000281824/file/tote-1_33445b051a404bb790b6d0df0275ac8d.png" width="86px" height="70px">
+                        </a>
+                    </div>
+
+
+                    <ul class="fm-menu">
+                        <li><a href="~/Home/TrangChu" class="fm-link-menu-1">Trang Chủ</a></li>
+                        <li><a href="~/Home/Index" class="fm-link-menu">Sản Phẩm</a></li>
+                        <li><a href="~/Home/Store" class="fm-link-menu">Store</a></li>
+                        <li><a href="~/Home/GioiThieu" class="fm-link-menu">Giới Thiệu</a></li>
+
+                    </ul>
+
+                    <div class="ShoppingCart">
+                        <a href="~/Cart/Index" itemprop="url">
+                            <img src="~/Content/Image/ShoppingCartLogo.png" width="32px" height="27px" />
+                            <li><a href="~/Cart/Index" class="txtShoppingCart">Giỏ Hàng</a></li>
+                        </a>
+
+                    </div>
+
+                    <div class="user-logo">
+                        <a href="~/Account/Login.cshtml" itemprop="url">
+                            <img src="~/Content/Image/login-logo.png" width="32px" height="27px" />
+                            <li><a href="~/Home/Login" class="txtLogoUser">Logout</a></li>
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div id="div-left">
+
+                </div>
+
+                <div id="div-content">
+
+                    @RenderBody()
+                </div>
+
+
+                <div id="div-footer">
+                    <div class="fm-footer">
+                        <div class="fm-thongtin">
+                            <h1 class="ten-degrey">Về DEGREY</h1>
+                            <p>
+                                Cái tên Degrey được tạo ra rất ngẫu hứng, xuất phát từ “Chuỗi ngày u buồn về sự nghiệp, tương lai trong quá khứ của chính mình” – theo lời chia sẻ của Degrey’s founder.
+                                <br />
+                                <br />
+                                <b>CÔNG TY TNHH DEGREY</b>
+                                <br />
+                                0315986019 0315986019 cấp ngày 31/10/2019 tại Sở kế hoạch đầu tư TPHCM
+                                <br />
+                                <br />
+                                <a href="http://online.gov.vn/Home/WebDetails/104783">
+                                    <img src="https://file.hstatic.net/1000281824/file/dathongbao_22c990fc936b40e0a50a1b646f478284.png" width="155px" height="60px" />
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="fm-footer">
+                        <div class="fm-diachi">
+                            <b>Địa chỉ</b>
+                            <br />
+                            <br />
+                            <b>-Sài Gòn:</b>
+                            <p>
+                                43 Huỳnh Văn Bánh P.17 Q.Phú Nhuận
+                            </p>
+
+                            <p><b>Điện thoại</b>: 0336311117</p>
+
+                            <p><b>Email</b>: degrey.vn@gmail.com</p>
+
+                        </div>
+
+                    </div>
+                    <div class="fm-footer">
+                        <div class="fm-hotro">
+                            <h1 class="ten-degrey">
+                                Hỗ trợ khách hàng
+                            </h1>
+                            <ul>
+                                <li>Giới thiệu Degrey</li>
+                                <br />
+                                <li>Hệ thống cửa hàng</li>
+                                <br />
+                                <li>Hướng dẫn đặt hàng</li>
+                                <br />
+                                <li>Chính sách và quy định</li>
+                                <br />
+                                <li>Chính sách bảo mật</li>
+                                <br />
+                                <li>Thông tin sở hữu</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fm-footer">
+                        <div class="fm-contact">
+                            <h1 class="ten-degrey">
+                                Chăm sóc khách hàng
+
+                            </h1>
+                            <h1 class="ten-degrey">
+                                0336311117
+                            </h1>
+                            <u>
+                                degrey.vn@gmail.com
+                            </u>
+                            <h1 class="ten-degrey">Follow Us</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </body>
+        </html>
+
         </footer>
     </div>
 

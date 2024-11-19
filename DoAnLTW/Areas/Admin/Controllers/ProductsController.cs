@@ -7,8 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DoAnLTW.Models;
-using DoAnLTW.Models.ViewModel;
-using PagedList;
 
 namespace DoAnLTW.Areas.Admin.Controllers
 {
@@ -17,69 +15,10 @@ namespace DoAnLTW.Areas.Admin.Controllers
         private MyStoreEntities db = new MyStoreEntities();
 
         // GET: Admin/Products
-        //public ActionResult Index(string searchTerm, decimal? minPrice,
-        //    decimal? maxPrice, string sortOrder, int? page)
-        //{
-        //    var model = new ProductSearchVM();
-        //    var products = db.Products.AsQueryable();
-        //    if (!string.IsNullOrEmpty(searchTerm))
-        //    { //Tim Kiếm sản phẩm dựa trên từ khóa
-        //        model.SearchTerm = searchTerm;
-        //        products = products.Where(p =>
-        //        p.ProductName.Contains(searchTerm) ||
-        //        p.ProductDescription.Contains(searchTerm) ||
-        //        p.Category.CategoryName.Contains(searchTerm));
-        //    }
-        //    //tìm kiếm sản phẩm dựa trên giá tối thiểu 
-        //    if (minPrice.HasValue)
-        //    {   
-        //        model.MinPrice = minPrice.Value;
-        //        products = products.Where(p => p.ProductPrice <= minPrice.Value);
-        //    }
-        //    //tìm kiếm sản phẩm dựa trên giá tối thiểu 
-        //    if (maxPrice.HasValue)
-        //    {
-        //        model.Maxprice = maxPrice.Value;
-        //        products = products.Where(p => p.ProductPrice <= maxPrice.Value);
-        //    }
-        //    //Áp dụng sắp xếp dựa trên lựa chọn của người dùng 
-        //    switch (sortOrder)
-        //    {
-        //        case "name_asc": products = products.OrderBy(p => p.ProductName); 
-        //            break;
-        //        case "name_desc":
-        //            products = products.OrderByDescending(p => p.ProductName);
-        //            break;
-        //        case "price_asc":
-        //            products = products.OrderBy(p => p.ProductName);
-        //            break;
-        //        case "price_desc":
-        //            products = products.OrderByDescending(p => p.ProductName);
-        //            break;
-        //    }
-        //    model.SortOrder = sortOrder;
-
-        //    //int pageNumber = page ?? 1;
-        //    //int pageSize = 2;
-
-        //    //model.Products = products.ToPagedList(pageNumber, pageSize);
-        //    return View(model);
-        //}
-        public ActionResult Index(string searchTerm)
+        public ActionResult Index()
         {
-            var model = new ProductSearchVM();
-            var products = db.Products.AsQueryable();
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                products = products.Where(p =>
-                 p.ProductName.Contains(searchTerm) ||
-                 p.ProductDescription.Contains(searchTerm) ||
-                 p.Category.CategoryName.Contains(searchTerm));
-
-            }
-            model.Products = products.ToList();
-            return View(model);
-
+            var products = db.Products.Include(p => p.Category);
+            return View(products.ToList());
         }
 
         // GET: Admin/Products/Details/5

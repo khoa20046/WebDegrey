@@ -51,6 +51,20 @@
         text-decoration: line-through;
         margin-left: 10px;
     }
+
+    .search-input {
+        height: 30px;
+        width: 195px;
+        border-radius: 10px;
+    }
+
+    .search-button {
+        height: 30px;
+        width: 70px;
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+    }
 </style>
 
 @*Tìm kiếm *@
@@ -71,8 +85,9 @@
 </section>
 <hr />
 
-@*sản phẩm nổi bật*@
-@Html.Partial("PVFeatureProduct", Model)
 
-@*Sản Phẩm Mới*@
+
+@*Sản Phẩm *@
 @Html.Partial("PVNewProduct", Model)
+
+

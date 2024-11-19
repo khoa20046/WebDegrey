@@ -69,9 +69,10 @@ namespace DoAnLTW.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = db.Users.SingleOrDefault(u => u.Username == model.Username 
-                && u.Password == model.Password 
-                && u.UserRole == "Customer");
+                var user = db.Users.SingleOrDefault(u => u.Username == model.Username
+                && u.Password == model.Password
+                && u.UserRole == "C"
+                );
                 if (user != null)
                 {
                     Session["Username"] = user.Username;
@@ -87,13 +88,15 @@ namespace DoAnLTW.Controllers
                 }
             }
 
+           
+
             return View(model);
         }
 
-        //public ActionResult Logout()
-        //{
-        //    Session.Clear();
-        //    return RedirectToAction("Login", "Account");
-        //}
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "Account");
+        }
     }
 }
